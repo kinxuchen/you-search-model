@@ -14,5 +14,15 @@
       "run_at": "document_start",
       "js": ["src/content.tsx"]
     }
+  ],
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "permissions": [
+    "cookies"
+  ],
+  "host_permissions": [
+    "https://you.com/*"
   ]
 }
