@@ -1,5 +1,4 @@
 // 只做一件事, 就是将 url 中的参数解析出来, 然后传递给 App 组件
-import { isElementOfType } from "react-dom/test-utils";
 
 const pathname = window.location.pathname;
 

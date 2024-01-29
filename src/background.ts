@@ -1,7 +1,5 @@
-// @ts-ignore
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'changeModel' && request.payload.model) {
-    console.log('设置 cookie')
     chrome.cookies.get({
       name: 'chat_mode',
       url: 'https://you.com'
