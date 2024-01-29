@@ -10,19 +10,20 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://you.com/*"],
+      "matches": ["https://you.com/*", "https://www.phind.com/*"],
       "run_at": "document_start",
       "js": ["src/content.tsx"]
     }
   ],
   "background": {
-    "service_worker": "src/background.ts",
-    "type": "module"
+    "service_worker": "src/background.ts"
   },
   "permissions": [
-    "cookies"
+    "cookies",
+    "storage"
   ],
   "host_permissions": [
-    "https://you.com/*"
+    "https://you.com/*",
+    "https://www.phind.com/*"
   ]
 }

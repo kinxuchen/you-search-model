@@ -40,6 +40,9 @@ devDependencies:
   vite:
     specifier: ^2.9.15
     version: 2.9.17
+  vite-plugin-remove-console:
+    specifier: ^2.2.0
+    version: 2.2.0
 
 packages:
 
@@ -1314,6 +1317,10 @@ packages:
       browserslist: 4.22.3
       escalade: 3.1.1
       picocolors: 1.0.0
+    dev: true
+
+  /vite-plugin-remove-console@2.2.0:
+    resolution: {integrity: sha512-qgjh5pz75MdE9Kzs8J0kBwaCfifHV0ezRbB9rpGsIOxam+ilcGV7WOk91vFJXquzRmiKrFh3Hxlh0JJWAmXTbQ==}
     dev: true
 
   /vite@2.9.17:
