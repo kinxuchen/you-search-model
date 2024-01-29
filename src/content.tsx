@@ -18,18 +18,19 @@ const hindWhiteModel: Record<string, boolean> = {
 if (
   host === 'you.com' &&
   pathname === '/search' &&
-  window.location.search?.length > 0) {
+  window.location.search) {
   const searchParams = new URLSearchParams(window.location.search);
   const tbm = searchParams.get('tbm');
   const cid = searchParams.get('cid');
   if (tbm && tbm === 'youchat' && !cid) {
     const model = searchParams.get('chat_mode') as string;
+    console.log('修改模型', model)
     if (model && youWhiteModel[model]) {
       chrome.runtime.sendMessage({
         action: 'changeModel',
         payload: {
           storageLocation: 'cookie', // 存储位置
-          key: 'chat_mode',
+          name: 'chat_mode',
           value: model,
           url: 'https://you.com',
           domain: 'you.com',
@@ -54,9 +55,9 @@ if (
   const cache = searchParams.get('cache');
   if (!cache) {
     const model = searchParams.get('answerModel') as string;
-    console.log('phind Model', model)
     if (model && hindWhiteModel[model]) {
       const oldModel = window.localStorage.getItem('answerModel');
+      console.log('模型', oldModel, model)
       if (oldModel && oldModel !== `"${model}"`) {
         window.stop();
         window.localStorage.setItem('answerModel', `"${model}"`);

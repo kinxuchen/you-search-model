@@ -1,7 +1,7 @@
 {
-  "name": "you-search-model",
+  "name": "changeAIsearchModel",
   "version": "0.0.1",
-  "description": "通过 url 参数修改 you 搜索中的 Model",
+  "description": "切换 phind.com 和 you.com 搜索的模型",
   "manifest_version": 3,
   "icons": {
     "16": "assets/icon-16.png",
